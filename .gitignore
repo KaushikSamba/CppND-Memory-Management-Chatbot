@@ -1,2 +1,3 @@
 build/
 # Attaching my .vscode directory for this project as reference on HOW TO DO IT RIGHT 
+.vscode/settings.json
