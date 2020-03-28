@@ -81,7 +81,7 @@ ChatBot::ChatBot(ChatBot &&source) // Move constructor
 
     _image = source._image;
 
-    source._image = nullptr;
+    source._image = NULL;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
     source._currentNode = nullptr;
@@ -101,7 +101,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source) // Move assignment operator
 
     _image = source._image;
 
-    source._image = nullptr;
+    source._image = NULL;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
     source._currentNode = nullptr;
@@ -158,6 +158,7 @@ void ChatBot::SetCurrentNode(GraphNode *node) {
     std::string answer = answers.at(dis(generator));
 
     // send selected node answer to user
+    _chatLogic->SetChatbotHandle(this);
     _chatLogic->SendMessageToUser(answer);
 }
 
